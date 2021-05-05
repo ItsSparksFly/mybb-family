@@ -396,7 +396,7 @@ if($action == "view") {
 						eval("\$fammember['claimed'] = \"".$templates->get("family_claim")."\";");
 					}
 					else { 
-						eval("\$fammember['claimed'] = \"".$templates->get("family_claim_guest")."\";");
+						$fammember['claimed'] == ";"
 					}
 				}
 				elseif($fammember['playable'] == "0") {

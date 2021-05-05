@@ -460,22 +460,6 @@ function family_activate()
 	$db->insert_query("templates", $insert_array);
 
 	  $insert_array = array(
-		'title'		=> 'family_claim_guest',
-		'template'	=> $db->escape_string('<div class="claim-fammember trow1">
-	<form action="family.php" method="post" id="claim_guest">
-		<input type="hidden" name="action" id="action" value="claim" />
-		<input type="hidden" name="id" id="id" value="{$fammember[\'fmid\']}" />
-		<input type="text" name="guest" id="guest" style="width: 45px !important; height: 7px !important; font-size: 8px;" value="Spitzname" />
-		<input type="submit" id="submit" name="submit" value="{$lang->family_claim}" style="width: 60px !important; font-size: 8px;" />
-	</form>
-</div>'),
-		'sid'		=> '-1',
-		'version'	=> '',
-		'dateline'	=> TIME_NOW
-	);
-	$db->insert_query("templates", $insert_array);
-
-	  $insert_array = array(
 		'title'		=> 'family_claim_unplayable',
 		'template'	=> $db->escape_string('<div class="claim-fammember trow1"> {$lang->family_info_unplayable}</div>'),
 		'sid'		=> '-1',
