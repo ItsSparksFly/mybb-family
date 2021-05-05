@@ -12,8 +12,6 @@ $plugins->add_hook("index_start", "family_index_start");
 if(class_exists('MybbStuff_MyAlerts_AlertTypeManager')) {
 	$plugins->add_hook("global_start", "family_alerts");
 }
-$plugins->add_hook("fetch_wol_activity_end", "family_online_activity");
-$plugins->add_hook("build_friendly_wol_location_end", "family_online_location");
 
 function family_info()
 {
