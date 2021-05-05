@@ -91,13 +91,11 @@ Folgende Templates werden durch dieses Plugin <i>bearbeitet</i>:
 
 <h1>Demo</h1>
 
-Die Screenshots stammen aus dem <a href="https://whokilledthecat.de/">[ curiosity ] killed the cat</a> von der lieben berrie ♥
+<center><img src="https://snipboard.io/WQ29lr.jpg" />
 
-<center><img src="https://snipboard.io/rhsUZk.jpg" />
+<img src="https://snipboard.io/mT3nE9.jpg" />
 
-<img src="https://snipboard.io/KJHzG2.jpg" />
+<img src="https://snipboard.io/WhSvE7.jpg" />
 
-<img src="https://snipboard.io/7blesY.jpg" />
-
-<img src="https://snipboard.io/QjidOg.jpg" />
+<img src="https://i.snipboard.io/ojrzdE.jpg" />
 </center>
