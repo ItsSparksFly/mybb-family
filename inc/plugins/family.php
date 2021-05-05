@@ -32,7 +32,7 @@ function family_install()
 
 	// database changes
 	if(!$db->table_exists("families")) {
-		$db->query("CREATE TABLE `mybb_families` (
+		$db->query("CREATE TABLE `".TABLE_PREFIX."families` (
   				`fid` int(11) NOT NULL AUTO_INCREMENT,
   				`uid` int(11) NOT NULL,
   				`lastname` text NOT NULL,
@@ -44,7 +44,7 @@ function family_install()
 	}
 
 	if(!$db->table_exists("families_members")) {
-		$db->query("CREATE TABLE `mybb_families_members` (
+		$db->query("CREATE TABLE `".TABLE_PREFIX."families_members` (
   				`fmid` int(11) NOT NULL AUTO_INCREMENT,
   				`fid` int(11) NOT NULL,
   				`uid` int(11) NOT NULL,
