@@ -990,7 +990,7 @@ function family_activate()
 		'template'	=> $db->escape_string('<html>
 <head>
 <title>{$mybb->settings[\'bbname\']} - {$lang->family}</title>
-<script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
+
 {$headerinclude}
 </head>
 <body>
@@ -1119,7 +1119,7 @@ function family_activate()
 
 	$insert_array = array(
 		'title'		=> 'member_profile_family',
-		'template'	=> $db->escape_string('<script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
+		'template'	=> $db->escape_string('
 			<table class="tborder" cellspacing="5" cellpadding="5">
 	<tr>
 		<td class="trow2">
@@ -1160,7 +1160,7 @@ function family_activate()
 
 	$insert_array = array(
 		'title'		=> 'showthread_family',
-		'template'	=> $db->escape_string('<script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
+		'template'	=> $db->escape_string('
 			<table class="tborder" cellspacing="5" cellpadding="5">
 	<tr>
 		<td class="trow2">
