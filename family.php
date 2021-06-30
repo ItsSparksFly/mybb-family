@@ -134,10 +134,8 @@ if($action == "editfamily") {
 	$family = $db->fetch_array($query);
 
 	// only team members and family's author can edit family
-	if($uid != $family['uid']) {
-		if($mybb->usergroup['cancp'] == "0") {
-			error_no_permission();
-		}
+	if($uid != $family['uid']) {	
+		error_no_permission();
 	}
 
 	// select matching class option
@@ -622,14 +620,16 @@ if($action == "claim") {
 	$db->update_query("families_members", $new_record, "fmid = '$fmid'");
 
 	// alert
-	$alertType = MybbStuff_MyAlerts_AlertTypeManager::getInstance()->getByCode('claimed');
- 	if ($alertType != NULL && $alertType->getEnabled()) {
-    	$alert = new MybbStuff_MyAlerts_Entity_Alert((int)$creator, $alertType, (int)$fid);
-        $alert->setExtraDetails([
-            'fullname' => $fullname
-    	]); 
-    	MybbStuff_MyAlerts_AlertManager::getInstance()->addAlert($alert);
-  	} 
+	if($mybb->user['uid']) {
+		$alertType = MybbStuff_MyAlerts_AlertTypeManager::getInstance()->getByCode('claimed');
+		if ($alertType != NULL && $alertType->getEnabled()) {
+		$alert = new MybbStuff_MyAlerts_Entity_Alert((int)$creator, $alertType, (int)$fid);
+		$alert->setExtraDetails([
+		    'fullname' => $fullname
+		]); 
+		MybbStuff_MyAlerts_AlertManager::getInstance()->addAlert($alert);
+		} 
+	}
 
 	redirect("family.php?action=view&id={$fid}", "{$lang->family_claimed}");
 }
