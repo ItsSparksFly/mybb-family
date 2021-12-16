@@ -1395,7 +1395,7 @@ function family_member_profile_end()
 	// only team and family's author can edit
 	$edit_family = "";
 	if($mybb->usergroup['cancp'] == "1" || $uid == $family['uid']) {
-		$edit_family = "<div class=\"tcat edit-family\"><a href=\"family.php?action=editfamily&id={$family['fid']}\">{$lang->family_edit_text}</a></div>";
+		$edit_family = "<div class=\"tcat edit-family\"><a href=\"family.php?action=editfamily&id={$family['fid']}\">{$lang->family_edit_text}</a> &bull; <a href=\"family.php?action=do_deletefamily&fid={$family['fid']}\">{$lang->family_delete_text}</a></div>";
 	}
 
 	// get statistics / numbers
@@ -1559,7 +1559,7 @@ function family_showthread_start()
 		// only team and family's author can edit
 		$edit_family = "";
 		if($mybb->usergroup['cancp'] == "1" || $uid == $family['uid']) {
-			$edit_family = "<div class=\"tcat edit-family\"><a href=\"family.php?action=editfamily&id={$family['fid']}\">{$lang->family_edit_text}</a></div>";
+			$edit_family = "<div class=\"tcat edit-family\"><a href=\"family.php?action=editfamily&id={$family['fid']}\">{$lang->family_edit_text}</a> &bull; <a href=\"family.php?action=do_deletefamily&fid={$family['fid']}\">{$lang->family_delete_text}</a></div>";
 		}
 
 		// get statistics / numbers
