@@ -314,7 +314,7 @@ if($action == "view") {
 	// only team and family's author can edit
 	$edit_family = "";
 	if($mybb->usergroup['cancp'] == "1" || $uid == $family['uid']) {
-		$edit_family = "<div class=\"tcat edit-family\"><a href=\"family.php?action=editfamily&id={$family['fid']}\">{$lang->family_edit_text}</a></div>";
+		$edit_family = "<div class=\"tcat edit-family\"><a href=\"family.php?action=editfamily&id={$family['fid']}\">{$lang->family_edit_text}</a> &bull; <a href=\"family.php?action=do_deletefamily&fid={$family['fid']}\">{$lang->family_delete_text}</a></div>";
 	}
 
 	// get statistics / numbers
@@ -434,15 +434,14 @@ if($action == "view") {
 				$fammember['take'] = "";
 				$fammember['claim_username'] = $db->fetch_field($username, $field_username);
 				eval("\$fammember['claimed'] .= \"".$templates->get("family_claimed")."\";");
-			}
+			}add
 
 			// only team and family's author can edit
 			$edit_fammember = "";
 			if($mybb->usergroup['cancp'] == "1" || $uid == $family['uid']) {
 				$edit_fammember = "<div class=\"thead edit-fammember\" style=\"margin-bottom: 0px;\"><a href=\"family.php?action=editmember&id={$fammember['fmid']}\">{$lang->family_edit_text}</a>";
-
 				// author can delete claims
-				if(($fammember['uid'] != "0" || $fammember['claim_username'] != "") && $fammember['uid'] != $uid) {
+				if($fammember['claim_username'] != "") {
 					 $edit_fammember .= "<a href=\"family.php?action=free&id={$fammember['fmid']}\">{$lang->family_set_free}</a>";
 				}
 				$edit_fammember .= "</div>";
