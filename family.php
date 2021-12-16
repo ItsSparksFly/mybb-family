@@ -169,6 +169,15 @@ if($action == "do_editfamily") {
 	redirect("family.php?action=view&id={$fid}", "{$lang->family_family_added}");
 }
 
+if($action == "do_deletefamily") {
+
+	$fid = $mybb->get_input('fid');
+
+	$db->delete_query("families", "fid = '$fid'");;
+	
+	redirect("family.php");
+}
+
 // add family member 
 if($action == "addmember") {
 
@@ -590,6 +599,19 @@ if($action == "filter_member") {
 	// set template
 	eval("\$page = \"".$templates->get("family_filter_members")."\";");
 	output_page($page);	
+}
+
+if($action == "delete_claim") {
+	$fmid = $mybb->get_input('id');
+	$query = $db->query("SELECT fid FROM ".TABLE_PREFIX."families_members 
+		WHERE fmid = '$fmid'");
+	$fid = $db->fetch_field($query, "fid");
+	$new_record = array(
+		"claim_username" => "",
+		"claim_timestamp" => ""
+	);
+	$db->update_query("families_members", $new_record, "fmid = '$fmid'");	
+	redirect("family.php?action=view&id={$fid}");
 }
 
 // claim character
