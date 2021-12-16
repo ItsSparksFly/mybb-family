@@ -173,7 +173,8 @@ if($action == "do_deletefamily") {
 
 	$fid = $mybb->get_input('fid');
 
-	$db->delete_query("families", "fid = '$fid'");;
+	$db->delete_query("families", "fid = '$fid'");
+	$db->delete_query("families_members", "fid = '$fid'");
 	
 	redirect("family.php");
 }
