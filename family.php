@@ -435,7 +435,7 @@ if($action == "view") {
 				$fammember['take'] = "";
 				$fammember['claim_username'] = $db->fetch_field($username, $field_username);
 				eval("\$fammember['claimed'] .= \"".$templates->get("family_claimed")."\";");
-			}add
+			}
 
 			// only team and family's author can edit
 			$edit_fammember = "";
